@@ -1,46 +1,3 @@
-// Select color input
-// Select size input
-
-// When size is submitted by the user, call makeGrid()
-// let hval = $('#input_height').val();
-// let wval = $('#input_width').val();
-
-// function makeGrid() {
-// 	for(let i = 0; i <= hval; i++){
-// 		$('#pixel_canvas').append('<tr></tr>');
-// 		for(let j = 0; j <= wval ; j++){
-// 			$('#pixel_canvas').find('tr').append('<td></td>');
-// 		}
-// 	}
-// }
-
-
-// for(let i = 1;i <= hval; i++){
-// 	table.append('<tr></tr>');
-// 	for(let j = 1;j <= wval; j++){
-// 		$('tr').append('<td></td>');
-// 	}
-// }
-
-
-
-// $('#button').click(function(){
-// 	let row ;
-// 	let col ;
-// 	row = $('#input_height').val();
-// 	col = $('#input_width').val();
-
-// 	var table = $('#pixel_canvas');
-// 	var flag;
-
-// 	for(let i = 0;i < row; i++){
-// 		table.append('<tr></tr>');
-// 		for(let j = 0;j < col; j++){
-// 			flag = $('tr')[j];
-// 			table.find('tr').append('<td></td>');
-// 		}
-// 	}
-// });
 
 // 参考网站：https://discussions.youdaxue.com/t/--a/50455/4
 // http://www.w3school.com.cn/jquery/jquery_ref_selectors.asp
@@ -62,6 +19,13 @@ function makeGrid(){
 	submit.on('click',function(){
 		row = height.val();
 		col = width.val();
+		if(row >= 30){
+			row = 30;
+		}
+		if(col >= 30){
+			col = 30;
+		}
+		$('td').detach();
 		for(let i=0;i<row;i++){
 			table.append('<tr></tr>');
 			for(let j=0;j<col;j++){
