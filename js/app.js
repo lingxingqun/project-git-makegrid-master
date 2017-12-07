@@ -19,13 +19,11 @@ function makeGrid(){
 	submit.on('click',function(){
 		row = height.val();
 		col = width.val();
-		if(row >= 30){
-			row = 30;
+		if(row > 30 || col > 30){
+			alert("请输入长宽都小于等于30的数值");
+			return;
 		}
-		if(col >= 30){
-			col = 30;
-		}
-		$('td').detach();
+		table.empty();
 		for(let i=0;i<row;i++){
 			table.append('<tr></tr>');
 			for(let j=0;j<col;j++){
